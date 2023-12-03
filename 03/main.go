@@ -48,7 +48,7 @@ func main() {
 		c := 0
 		for c < len(grid[r]) {
 			if numMap[grid[r][c]] {
-				stPt := toPoint(r, c)
+				stPt := point{r, c}
 				endPt := endPoint(stPt)
 				if gear, ok := isPart(stPt, endPt); ok {
 					n := partNum(stPt, endPt)
@@ -67,10 +67,6 @@ func main() {
 		}
 	}
 	fmt.Println("GearRatioSum", gearRatioSum)
-}
-
-func toPoint(r, c int) point {
-	return point{r, c}
 }
 
 func endPoint(start point) point {
